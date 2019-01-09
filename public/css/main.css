@@ -1,0 +1,278 @@
+@import 'base.css';
+/***** 공통사항 *****/
+@media screen and (max-width:768px){
+  html,body{ font-size: 14px}
+}
+@media screen and (max-width:480px){
+   html,body{ font-size: 12px}
+}
+@media screen and (max-width:320px){
+
+}
+
+@keyframes SizeUp{
+   0%{ transform: scale(1);}
+   100%{transform: scale(1.2);}
+ }
+ @keyframes SizeDn{
+    0%{ transform: scale(1.2);}
+    100%{transform: scale(1);}
+  }
+
+/***** Header *****/
+header {width:100%; position:fixed; top: 0; box-shadow:0 3px 4px rgba(0,0,0,0.3); font-size:1rem; background-color: white; z-index:999;}
+.logo {float:left; padding:1em;}
+.nav {cursor:pointer;}
+/***** navigation PC *****/
+.navs {float:right;}
+.navs .nav {float:right; padding:1em;}
+
+
+/***** navigation Mobile *****/
+.navs_mo {float:right; padding:1em; display:none;}
+.navs_mo_sub {height:100%; background-color:rgba(0,0,0,.8); position:fixed; z-index:1000; color:#fff; font-size:01rem; display:none;}
+.navs_mo_sub > li {padding:0.75em; padding-right:5em;}
+.navs_mo_sub > .nav_close {padding:1.25em; padding-right:5em;}
+.navs_mo_sub > .nav:hover {background-color: beige; color:#121212;}
+/***** navigation Response *****/
+@media screen and (max-width:768px) {
+   .navs {display:none;}
+   .navs_mo {display:block;}
+   .navs_mo_sub {display:block;}
+}
+
+/***** banner PC *****/
+.banner {position:relative; margin:3rem auto 0 auto; max-width:1200px;}
+.banner_wrap {position:relative; width:100%;} /*배너무빙의 기준*/
+.banner_wrap > li {position:absolute; width:100%;}
+.banner_slogan {position:absolute; width:90%; left:5%; top:50%; color:#fff; transform:translateY(-50%); font-size:1rem;}
+.banner_slogan > h1 {font-size:4em; margin-bottom:0.75em;}	
+.banner_slogan > h4 {font-size:1.5em; margin-bottom:1em;}	
+.banner_slogan > button {font-size:1em; padding:1em; 
+	background-color:rgba(248, 248, 219, .7); color:#121212; border:none;}	
+.banner_slogan > button:hover {background-color:rgba(248, 248, 219, 1);}
+
+/* Horizental Only  */
+.bt_banner{ position: absolute; z-index: 11; top: 50%; transform: translateY(-50%); font-size: 3rem;
+opacity: 0.3;}
+.bt_banner:hover{opacity: 0.8;}
+#bt_prev{left: 5%}
+#bt_next{right: 5%}
+
+/* Vertical Only 
+.bt_banner{ position: absolute; z-index: 11; left: 50%; top: 50%; font-size: 2rem;
+opacity: 0;}
+#bt_prev{transform: translate(-50%, -120%);}
+#bt_next{transform: translate(-50%, 120%);} */
+
+.social_link {position:absolute; width:100%; bottom:3%; left:5%; text-align:left; z-index:10;}
+.social_link > li {display:inline-block; color:#ccc; cursor:pointer;}
+.social_link > li:hover {color:#f1f1f1;}
+
+/***** banner Response *****/
+@media screen and (max-width:768px) {
+	.banner_slogan {font-size:0.75rem;}
+}
+
+@media screen and (max-width:480px) {
+	.banner_slogan {font-size:0.5rem;}
+}
+/***** company PC *****/
+.company{padding: 3rem 0; text-align: center;}
+.company > h2{font-weight: 300; letter-spacing: 3px; margin-bottom: 3rem;}
+.company > h4{font-weight: 300;}
+.company_features{max-width: 1400px; margin: auto;}
+.company_features > li{width: 24%; float:left; padding: 1%; margin-top: 3rem}
+.company_feature{font-size: 1rem}
+.company_feature > :nth-child(1) {font-size: 5em}
+.company_feature > :nth-child(2) {font-size:1.25em;line-height: 4em}
+.company_feature > :nth-child(3) {line-height:1.75em}
+
+/***** company Response*****/
+@media screen and (max-width:768px) {
+	.company_features >li {width: 50%;}
+}
+
+@media screen and (max-width:480px) {
+	.company_features >li {width: 100%}
+}
+/***** Design PC *****/
+.design{padding: 5rem 0; font-size: 1rem; background-color: #eee;}
+.design > :first-child{float: left; width: 50%; padding:5%;}
+.design h2{ font-weight: 200; letter-spacing: 3px; margin-bottom:1.5em }
+.design h5{ margin-bottom: 2em; line-height: 1.5em }
+.design > :last-child{float: left; width: 40%; margin: 5%; overflow: hidden;border-radius: 0.5em;}
+.design img{ animation-name:SizeDn;  animation-duration: 1s; animation-fill-mode: forwards;}
+.design img:hover{ animation-name:SizeUp}
+
+/***** Design Response *****/
+@media screen and (max-width:480px) {
+   .design > :first-child {width: 100%}
+	.design > :last-child {width: 90%}
+}
+
+/***** Team PC *****/
+.team{padding: 5rem 0; text-align: left;}
+.team h2{font-weight: 200; letter-spacing: 3px; margin-bottom: 1.5em; text-align: center;}
+.team h5{line-height: 2em; margin-bottom: 1.5em; text-align: center;}
+.team > ul{ max-width: 1200px; margin: auto;}
+.member{width: 24%; margin: .5%; float: left; box-shadow: 0 0 5px rgba(0,0,0,0.3);}
+.member:hover{box-shadow: 0 0 30px rgba(0,0,0,.5); transform: scale(1.01);}
+.member > ul > li:first-child{overflow: hidden;}
+.member > ul > li:first-child > img{animation-name:SizeDn; animation-duration: 1s; animation-fill-mode: forwards;}
+.member > ul > li:first-child > img:hover{animation-name:SizeUp;}
+.member > ul > li:not(:first-child){padding: 1rem;}
+.member > ul > li:nth-child(2){font-size: 1.75em;}
+.member > ul > li:nth-child(3){font-size: 1.125em; color: #666;}
+.member > ul > li:nth-child(4){line-height: 2em;}
+.member > ul > li:nth-child(5){width: 100%;}
+
+/***** Team Response *****/
+@media screen and (max-width:768px) {
+   .member {width:48%; margin: 1%;}
+   
+}
+@media screen and (max-width:480px) {
+   .member {width: 96%; margin: 2%;}
+   
+}
+
+/***** Partner PC *****/
+.partner{background-color: #555; text-align: center; color:#f8f8f8;}
+.partner_wrap > ul{width: 25%; float: left; padding: 5%; font-size: 1rem;}
+.partner_wrap > ul > li:first-child{font-size: 2em; line-height: 1.5em;}
+.partner_wrap > ul > li:last-child{font-size: 1em;}
+
+/***** Team Response *****/
+@media screen and (max-width:768px) {
+   .partner_wrap > ul {width:50%;}
+   
+}
+@media screen and (max-width:480px) {
+   .partner_wrap > ul {width:100%;}
+   
+}
+
+/***** works PC *****/
+.works {padding:5rem 0;}
+.works h2 {font-weight:200; letter-spacing: 3px; margin-bottom:1.5em; text-align:center;}
+.works h5 {line-height:2em; margin-bottom:1.5em; text-align:center;}
+.work_float {max-width:1200px; margin:auto;}
+.work_float .work {float:left; width:24%; margin:.5%;}
+/* Flex 용 */
+.work_flex {max-width:1200px; margin:auto; width:100%;}
+.work_flex > ul {display:flex; -ms-display:flex; flex-direction:row; -ms-flex-direction:row; flex-wrap:wrap; -ms-flex-wrap:wrap; justify-content:space-between; -ms-justify-content:space-between;} 
+.work_flex > ul > li {width:23%; margin-bottom:1%;}
+
+/***** masonry *****/
+.work_masonry {max-width:1200px; margin:auto; width:100%;}
+.grid-sizer,
+.grid-item { width: 24%; margin: .5%; overflow: hidden;}
+.grid-item > img{ animation-duration: .5s; animation-fill-mode: forwards; animation-name: SizeDn}
+.grid-item > img:hover{ animation-name: SizeUp}
+
+/* 2 columns */
+.grid-item--width2 { width: 40%; }
+
+/***** works Response *****/
+@media screen and (max-width:992px) {
+   .work_float .work {width:32%; margin:0.65%;}
+   .grid-sizer,.grid-item{width:32%; margin:0.65%;}
+}
+@media screen and (max-width:768px) {
+   .work_float .work {width:48%; margin:1%;}
+   .grid-sizer,.grid-item{width:48%; margin:1%;}
+}
+@media screen and (max-width:480px) {
+   .work_float .work {width:96%; margin:2%;}
+   .grid-sizer,.grid-item{width:96%; margin:2%;}
+   
+}
+
+/***** skills PC *****/
+.skills{background-color: #eee; padding: 5rem 0;}
+.skills > ul{ width: 94%; margin: auto; max-width: 1200px;}
+.skills > ul > li{ width: 50%; float: left;}
+
+.skill_lt{padding-right: 3%}
+.skill_lt > h2{ font-weight: 200; letter-spacing: 3px; margin-bottom: 1.5em}
+.skill_lt > p{line-height: 2em; margin-top: 2em;}
+.skill_rt .skill_tit{ padding: 2em 0 1em 0; letter-spacing: 0.25em}
+.skill_rt .skill_bar{background-color: #aaa;}
+.skill_rt .skill_bar > div{background-color: #555; color: #f1f1f1; text-align: center; padding: 0.5em }
+
+/***** skills Response *****/
+
+@media screen and (max-width:768px) {
+   .skills > ul > li { width: 100%; margin-bottom: 3%;}
+}
+
+/***** price PC *****/
+.prices{ padding: 5rem 0; background-color: #666; text-align: center;}
+.prices h2 {font-weight:200; letter-spacing: 3px; margin-bottom:1.5em;color: #f1f1f1;}
+.prices h5 {line-height:2em; color: #f1f1f1; margin-bottom: 4em;}
+.prices > ul{ max-width: 1200px; margin: auto;}
+.price{ width: 32%; float: left; box-shadow: 0 0 0.5em rgba(0,0,0,0.3);}
+.price:hover{  box-shadow: 0 0 1em rgba(0,0,0,0.6);}
+.price:nth-child(2){ margin: 0 2%; transform: translateY(-2rem); }
+.price > ul > li{padding: 1.25em; border-bottom: 1px solid #ccc; background-color: #f1f1f1;}
+.price_tit{font-size:1.25em;padding: 2rem !important; border-bottom: none !important; background-color: #111 !important; color: #f1f1f1;}
+.price_tit2{font-size:1.25em;padding: 4rem !important; background-color: #f44236 !important;border-bottom: none !important;color: #f1f1f1; }
+
+/***** skills Response *****/
+@media screen and (max-width:768px) {
+   .price{ width:96%; margin:2%;}
+   .price:nth-child(2){margin:2%; transform: translateY(0); }
+}
+
+/***** Contact PC *****/
+.contacts {padding: 5rem 0; background-color: #f1f1f1;}
+.contacts > h2 {font-weight:200; letter-spacing: 3px; margin-bottom:1.5em; text-align: center;}
+.contacts > h5 {line-height:2em; margin-bottom:3em; text-align: center;}
+.contacts > ul{width: 96%; max-width: 1200px; margin: auto;}
+.contacts > ul > li{width: 50%; float: left;}
+.contact_info > ul > li{padding: 0.75em;}
+.contact_info span{font-size: 2em; width: 2em;}
+.contact_form input{width: 100%; margin: 1em 0; padding: 0.5em;}
+.map{width: 96%; margin: auto; max-width: 1200px; height: 50vh; margin-top: 3rem; position: relative;}
+.map_marker{ position: absolute; left: 50%; top: 50%; transform: translate(-50%, 50%); color: #f30; z-index: 9999; font-size: 2rem;}
+/***** Contact Response *****/
+@media screen and (max-width:768px) {
+   .contacts > ul > li{ width: 96%; margin: auto}
+}
+
+/***** footer PC *****/
+footer {padding:5rem 0; background-color:#222; text-align: center; color:#eee;}
+.footer_social_link {font-size:1.5em; padding:1em;}
+.footer_social_link > li {display:inline-block; cursor:pointer;}
+.footer_social_link > li:hover {color:#fff;}
+/***** footer response *****/
+
+
+/***** spa_ani *****/
+.spa_ani{animation-fill-mode: forwards ; opacity: 0; animation-timing-function:ease-in}
+@keyframes opaShow{
+0%{ opacity: 0; transform: scale(0.5)}
+90%{ opacity: 1;transform: scale(1.1)}
+100%{ opacity: 1;transform: scale(1)}
+}
+@keyframes rtMove{
+   0%{opacity: 0; transform:translateX(100%)}
+   90%{opacity: 1; transform: translateX(-1%)}
+   100%{opacity: 1; transform: translateX(0%)}
+}
+@keyframes ltMove{
+   0%{opacity: 0; transform: translateX(-100%)}
+   90%{opacity: 1; transform: translateX(1%)}
+   100%{opacity: 1; transform: translateX(0%)}
+}
+@keyframes topMove{
+   0%{opacity: 0; transform: translateY(100%)}
+   90%{opacity: 1; transform: translateY(-1%)}
+   100%{opacity: 1; transform: translateY(0%)}
+}
+@keyframes botMove{
+   0%{opacity: 0; transform: translateY(-100%)}
+   90%{opacity: 1; transform: translateY(1%)}
+   100%{opacity: 1; transform: translateY(0%)}
+}
