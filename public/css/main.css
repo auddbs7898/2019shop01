@@ -1,1 +1,30 @@
 @import 'base.css';
+/***** 공통사항 *****/
+.wrap{ max-width: 1400px; margin: auto}
+.modals{position: fixed; z-index: 9999; display: none;}
+.rt_bg{ width: 100%; height: 100%; background-color: #000; top: 0; left: 0; }
+.rt_cont{width: 240px; height: 100%; background-color: #fff; text-align: center; top: 0; right: 0; font-size: 0.75rem;}
+.rt_cont > .fa-close{cursor: pointer; font-size: 1.5em; padding: 3em 0 4em 0;}
+.mypages > li{padding: 1em 0; cursor: pointer;}
+.mypages > li:hover{padding: 1em 0; color: #222;}
+.country{ margin-top: 3.5em;}
+.country > span {width: 40px; height: 40px; line-height: 40px; margin: 6px 0; cursor: pointer;}
+.country > span:hover {background-color: #94cdd5 !important; }
+
+/***** 상단네비 / top_navs *****/
+.logo{ float: left;}
+.top_navs{padding: 2rem 0 ;}
+.top_nav{ float: right;}
+.top_nav > li{ float: left; margin-right: 2rem; font-size: 0.75rem; font-weight: 600; cursor: pointer;}
+.top_nav > li:nth-child(1){ line-height: 1.25rem;}
+.top_nav > li:nth-child(2){ line-height: 1.25rem;}
+.top_nav > li:nth-child(1) > img{margin-right: 0.75rem; margin-top:0.25rem }
+.top_nav > li:nth-child(2) > img{margin-right: 0.75rem; }
+.top_nav > li:nth-child(3){padding-top: 0.5rem; position: relative;}
+.top_nav > li:nth-child(3) > .w3-badge{position: absolute; color: #666; padding: 0.1rem 0.3rem;
+top: -1rem;}
+.top_nav > li:nth-child(4){padding-top: 0.5rem;}
+.top_nav  .fa-shopping-basket{ font-size: 1rem; color: #222;}
+.top_nav  .fa-bars{ font-size: 1.25rem; color: #222;}
+
+
