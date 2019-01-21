@@ -19,14 +19,15 @@ function ani() {
 }
 */
 
-
-/* var now = 0;//나타날배너
-var delay = 2000;
+/*
+var now = 0;	//나타날 배너(li.slide)
+var delay = 2000;	//다음 나타날 배너가 나오는 간격(시간)
 var speed = 300;
-var interval = setInterval(ani, delay);
-var end = $(".slide").length - 1;
-var dir = -1;
+var interval = setInterval(ani, delay);		//delay후 계속 반복하여 ani함수를 실행한다
+var end = $(".slide").length - 1; //마지막 배너의 index
+var dir = -1;	//애니메이션 방향 -1:오른쪽->왼쪽 / 1:왼쪽->오른쪽
 init();
+//초기화(애니메이션 시작전 항상 실행)
 function init() {
 	$(".banner_wrap").css({"left":0});
 	$(".slide").hide(0);
@@ -46,7 +47,7 @@ function init() {
 }
 function ani() {
 	init();
-	$(".banner_wrap").stop().animate({"left":(100*dir)+"%"}, 1000, function(){
+	$(".banner_wrap").stop().animate({"left":(100*dir)+"%"}, speed, function(){
 		if(dir == -1) {
 			if(now == end) now = 0;
 			else now++;
@@ -57,26 +58,27 @@ function ani() {
 		}
 	});
 }
-$(".banner_wrap").mouseenter(function () { 
-    clearInterval(interval);
+$(".banner_wrap").mouseenter(function(){
+	clearInterval(interval);
 });
-$(".banner_wrap").mouseleave(function () { 
-    clearInterval(interval);
-    interval = setInterval(ani, delay);
+$(".banner_wrap").mouseleave(function(){
+	clearInterval(interval);
+	interval = setInterval(ani, delay);
 });
 $("#bt_prev").click(function(){
-    clearInterval(interval);
-    dir = 1;
-    ani();
-    interval = setInterval(ani, delay);
+	clearInterval(interval);
+	dir = 1;
+	ani();
+	interval = setInterval(ani, delay);
 });
 $("#bt_next").click(function(){
-    clearInterval(interval);
-    dir = -1;
-    ani();
-    interval = setInterval(ani, delay);
+	clearInterval(interval);
+	dir = -1;
+	ani();
+	interval = setInterval(ani, delay);
 });
- */
+*/
+
 var SlideHori = (function(){
 	function SlideHori(container, slides, options) {
 		var obj = this;
@@ -102,7 +104,7 @@ var SlideHori = (function(){
 		this.now = 0;
 		this.end = this.slides.length - 1;
 		this.init(obj);
-		this.Interval = setInterval(this.ani, this.options.delay, obj);
+		this.interval = setInterval(this.ani, this.options.delay, obj);
 		if(this.options.dirBtnUse === true) {
 			this.options.dirBtn[0].click(function(){
 				clearInterval(obj.interval);

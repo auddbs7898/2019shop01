@@ -45,3 +45,5 @@ var SlideFade = (function(){
 	}
 	return SlideFade;
 }());
+
+

@@ -42,3 +42,15 @@ $(window, document, "html, body").on("scroll touchmove", scFn);
 function barMove(obj) {
 	if(obj.width() == 0) obj.stop().animate({"width":obj.html()}, 2000);
 }
+
+$().stop().animate({}, 3000, function(){
+	$().stop().animate({}, 3000, function(){
+		$().stop().animate({}, 3000, function(){
+			$().stop().animate({}, 3000, function(){
+				$().stop().animate({}, 3000, function(){
+	
+				})
+			})
+		})
+	})
+})

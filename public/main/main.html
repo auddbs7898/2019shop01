@@ -1,79 +1,112 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<!-- <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"> -->
-	<!-- <link rel="icon" href="../favicon.ico" type="image/x-icon"> -->
-	<title>이예은</title>
+	<meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<title></title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="../css/w3.css">
-  <link rel="stylesheet" href="../css/bootstrap.min.css">
-  <link rel="stylesheet" href="../css/main.css">
-  <script src="../js/jquery-3.3.1.min.js"></script><!-- 제이쿼리가 제일 위에있어야한다, 아래있는 src가 다 제이쿼리와 연동해야되기때문 -->
-  <script src="../js/imagesloaded.pkgd.min.js"></script><!-- 이미지가 모두 로딩이 되었을때 정상적으로 작동된다 ex)mesonry사용시 js에서 이미지로드를 사용해야 이미지가 제대로 나온다 -->
-  <script src="../js/masonry.pkgd.min.js"></script>
-  <script src="../js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/main.css">
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script src="../js/imagesloaded.pkgd.min.js"></script>
+	<script src="../js/masonry.pkgd.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/jquery.cycle2.min.js"></script>
 </head>
-<body>
-	<!--상단네비 / top_nav-->
-   <div class="top_navs wrap clear">
-	  <div class="logo"><img src="../img/logo.png"></div>
-	  <ul class="top_nav">
-		  <li class="top_icon">
-			  <img src="../img/icon-1.png" class="fl">
-			  <span class="fl">FREE DELIVERY<br>FROM $ 250</span>
-		  </li>
-		  <li class="top_icon">
-				<img src="../img/icon-2.png" class="fl">
-				<span class="fl">MONEY BACK<br>GUARANTEED</span>
-			</li>
-		  <li>
-			  <span class="w3-badge w3-light-gray">0</span>
-			  <span class="fa fa-shopping-basket"></span> CART
-			</li>
-		  <li>
-			  <span class="fa fa-bars"></span>
-		  </li>
-	  </ul>
-   </div>
 
-	<!--메인네비 / navs-->
-	<div class="navs">
-		<ul class="wrap clear">
-			<li class="nav">HOME</li>
-			<li class="nav">SHOP</li>
-			<li class="nav">BLOG</li>
-			<li class="nav">PORTPOLIO</li>
-			<li class="nav">CONTACT</li>
-			<li class="search">
-				<input type="text" name="search" class="in_search" placeholder="search">
-				<span class="fa fa-search"></span>
+<body>
+	<!-- 상단 네비 / top_navs -->
+	<div class="top_navs wrap clear">
+			<div class="logo"><img src="../img/logo.png"></div>
+			<ul class="top_nav">
+				<li class="top_icon">
+					<img src="../img/icon-1.png" class="fl">
+					<span class="fl">FREE DELIVERY<br>
+						FROM $ 250</span>
+				</li>
+				<li class="top_icon">
+					<img src="../img/icon-2.png" class="fl">
+					<span class="fl">MONEY BACK<br>
+						GUARANTEED</span>
+				</li>
+				<li>
+					<span class="w3-badge w3-light-grey">0</span>
+					<span class="fa fa-shopping-bag"></span> CART
+				</li>
+				<li>
+					<span class="fa fa-bars"></span>
+				</li>
+			</ul>
+		</div>
+		<!-- 메인 네비 / navs -->
+		<div class="navs">
+			<ul class="wrap clear">
+				<li class="nav rel">HOME<ul class="nav_sub clear"></ul>
+				</li>
+				<li class="nav">SHOP<ul class="nav_sub clear"></ul>
+				</li>
+				<li class="nav">BLOG
+					<ul class="nav_sub blogs clear">
+						<li class="grid"></li>
+						<li>
+							<img src="../img/menu-blog.jpg" class="img">
+						</li>
+					</ul>
+				</li>
+				<li class="nav rel">PORTFOLIO<ul class="nav_sub clear"></ul></li>
+				<li class="nav">CONTACT</li>
+				<li class="search">
+					<input type="text" name="search" class="in_search" placeholder="search">
+					<span class="fa fa-search"></span>
+				</li>
+			</ul>
+		</div>
+		<!-- 메인 배너 및 좌측 네비 / mains -->
+		<ul class="mains wrap clear">
+			<li class="lefts"><ul class="left"></ul></li>
+			<li class="bans">
+				<ul class="ban">
+					<li><img src="../img/slider-7.jpg" class="img"></li>
+					<li><img src="../img/slider-8.jpg" class="img"></li>
+					<li><img src="../img/slider-12.jpg" class="img"></li>
+				</ul>
+				<div class="cycle-pager"></div>
+				<!--ul class="ban cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-timeout="3000" data-cycle-slides="> li" data-pause-on-hover="true" data-cycle-speed="500">
+					<div class="cycle-pager"></div>
+					<li><img src="../img/slider-7.jpg" class="img"></li>
+					<li><img src="../img/slider-8.jpg" class="img"></li>
+					<li><img src="../img/slider-12.jpg" class="img"></li>
+				</ul-->
 			</li>
 		</ul>
+	
+	
+		<!-- 오른쪽 날개 / rt_wings -->
+		<div class="modals rt_bg"></div>
+		<div class="modals rt_cont">
+			<span class="fa fa-close"></span>
+			<ul class="mypages">
+				<li>MY ACCOUNT</li>
+				<li>CHECKOUT</li>
+				<li>WISHLIST</li>
+			</ul>
+			<div class="country">
+				<span class="w3-badge w3-light-grey">USD</span>
+				<span class="w3-badge w3-light-grey">EUR</span>
+				<span class="w3-badge w3-light-grey">GBP</span>
+				<br>
+				<span class="w3-badge w3-light-grey"><img src="../img/eng.png"></span>
+				<span class="w3-badge w3-light-grey"><img src="../img/fra.jpg"></span>
+				<span class="w3-badge w3-light-grey"><img src="../img/arab.jpg"></span>
+			</div>
 	</div>
-
-  <!--오른쪽 날개 / rt_wings-->
-  <div class="modals rt_bg"></div>
-  <div class="modals rt_cont">
-	  <span class="fa fa-close"></span>
-	  <ul class="mypages">
-		  <li>MY ACCOUNT</li>
-		  <li>CHECKOUT</li>
-		  <li>WISHLIST</li>
-	  </ul>
-	  <div class="country">
-        <span class="w3-badge w3-light-gray">USD</span>
-        <span class="w3-badge w3-light-gray">EUR</span>
-		<span class="w3-badge w3-light-gray">GBP</span>
-		<br>
-		<span class="w3-badge w3-light-gray"><img src="../img/eng.png"></span>
-		<span class="w3-badge w3-light-gray"><img src="../img/fra.jpg"></span>
-		<span class="w3-badge w3-light-gray"><img src="../img/arab.jpg"></span>
-	  </div>
-  </div>
-
+	<script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
 	<script src="../js/main.js"></script>
 </body>
+
 </html>
