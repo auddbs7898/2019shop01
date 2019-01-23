@@ -374,3 +374,46 @@ $(".ghost_bt").click(function(){
 	$(".ghost_bt").css({"background-color":"", "color":"", "border":""});
 	$(this).css({"background-color":"#333", "color":"#fff", "border":"1px solid #333"});
 });
+
+/***** .prds 상품 애니메이션 *****/
+$(".prd").mouseenter(prdHover);
+$(".prd").mouseleave(prdLeave);
+function prdHover() {
+	imgSwap($(this).find(".prd_img"));
+	var $mask = $(this).find(".prd_mask");
+	var $icon = $(this).find(".prd_icon");
+	$mask.stop().fadeIn(200);
+	$icon.each(function(){
+		var name = $(this).data("over");
+		var speed = $(this).data("speed");
+		var delay = $(this).data("delay");
+		aniInit($(this), name, speed, delay);
+	});
+}
+function prdLeave() {
+	imgSwap($(this).find(".prd_img"));
+	var $mask = $(this).find(".prd_mask");
+	var $icon = $(this).find(".prd_icon");
+	$mask.stop().fadeOut(200);
+	$icon.each(function(){
+		var name = $(this).data("out");
+		var speed = $(this).data("speed");
+		var delay = $(this).data("delay");
+		aniInit($(this), name, speed, delay);
+	});
+}
+function imgSwap(obj) {
+	var src = obj.attr("src");
+	var srcHover = obj.data("src");
+	obj.attr("src", srcHover);
+	obj.data("src", src);
+}
+function aniInit(obj, name, speed, delay) {
+	obj.css({"animation-fill-mode": "backwards"});
+	obj.css({
+		"animation-name": name,
+		"animation-duration": speed,
+		"animation-delay": delay,
+		"animation-fill-mode": "forwards"
+	});
+}
