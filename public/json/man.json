@@ -1,18 +1,8 @@
 {
-	"cate": "woman",
+	"cate": "man",
 	"all":{
 		"latest":[
 			{
-				"tit": "Designer Glasses Frames",
-				"img1": "../img/product-17-300x400.jpg",
-				"img2": "../img/product-14-300x400.jpg",
-				"star": 3,
-				"price": "<span>$24.00 - $30.00</span>",
-				"sale": true,
-				"hot": false,
-				"link": "../test/test.html",
-				"target": "_blank"
-			},{
 				"tit": "Flower Glass Vase",
 				"img1": "../img/product-1-300x400.jpg",
 				"img2": "../img/product-15-300x400.jpg",
@@ -20,6 +10,16 @@
 				"price": "<span>$259.00</span>",
 				"sale": false,
 				"hot": true,
+				"link": "../test/test.html",
+				"target": "_blank"
+			},{
+				"tit": "Designer Glasses Frames",
+				"img1": "../img/product-17-300x400.jpg",
+				"img2": "../img/product-14-300x400.jpg",
+				"star": 3,
+				"price": "<span>$24.00 - $30.00</span>",
+				"sale": true,
+				"hot": false,
 				"link": "../test/test.html",
 				"target": "_blank"
 			},{
