@@ -21,7 +21,8 @@ w3.includeHTML(function(){
 // database = CRUD(Create/Read/Update/Delete)
 // Firebase Init / github에서 복사하신 분은 꼭 자신의 내용으로 바꿔주세요.
 const log = console.log;
-var config = {
+ // Initialize Firebase
+ var config = {
     apiKey: "AIzaSyDmCGWlnyhcIla3h0boO0qG6PxwgfesYyE",
     authDomain: "auddbs7898-shop.firebaseapp.com",
     databaseURL: "https://auddbs7898-shop.firebaseio.com",

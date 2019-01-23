@@ -1,4 +1,9 @@
 const log = console.log;
+// 모든 이미지가 서버로부터 전송이 완료되면 리사이즈 이벤트를 한번 실행하여
+// 이미지 높이를 계산하게 한다.
+$("body").imagesLoaded(function(){
+	$(window).trigger("resize");
+});
 //$.ajax() 객체화
 var Ajax = (function(){
 	function Ajax(url, fn, opts) {
@@ -31,7 +36,8 @@ var Ajax = (function(){
 }());
 
 // Firebase Init / github에서 복사하신 분은 꼭 자신의 내용으로 바꿔주세요.
-var config = {
+ // Initialize Firebase
+ var config = {
     apiKey: "AIzaSyDmCGWlnyhcIla3h0boO0qG6PxwgfesYyE",
     authDomain: "auddbs7898-shop.firebaseapp.com",
     databaseURL: "https://auddbs7898-shop.firebaseio.com",
@@ -181,23 +187,21 @@ $(".rt_bg").click(function(e){
 	$(".rt_cont .fa-close").trigger("click");
 });
 
-//메인네비 / .navs
-//firebase.database().ref("root/test").push({test:"테스트"}).key;
-
 //메인배너 / .bans
-//fadeShow();
+fadeShow();
 function fadeShow() {
 	var $wrap = $(".ban");
 	var $slide = $(".ban > li");	
-	var depth = 100;
-	var now = 0;
-	var speed = 500;
-	var timeout = 3000;
-	var end = $slide.length - 1;
-	var interval;
-	$slide.each(function(i){
-		$(this).css({"position":"absolute"});
-		$wrap.height($(this).height());
+	var depth = 10;									//z-index
+	var now = 0;										//Animation 대상
+	var speed = 500;								//Animation 속도(animation-duration)
+	var timeout = 3000;							//Animaton 간격(animation-delay)
+	var end = $slide.length - 1;		//마지막 객체의 index값
+	var interval;										//Animation 간격에 맞춰 특정된 함수를 실행한다.
+	var hei;
+	//Pager 초기화
+	$slide.each(function(){
+		$(this).css({"position":"absolute", "top":0});	//$(".ban > li")의 css 설정
 		$(".cycle-pager").append("<span>●</span>");
 	});
 	$(".cycle-pager span").click(function(){
@@ -206,11 +210,33 @@ function fadeShow() {
 		clearInterval(interval);
 		interval = setInterval(fadeAni, timeout);
 	});
+	$(".bans").height($slide.eq(0).height());
+	$(window).resize(function(){
+		$(".bans").height($slide.eq(now).height());
+	});
+	//최초 실행
 	interval = setInterval(fadeAni, timeout);
 	function fadeAni() {
+		$(window).trigger("resize");
 		$(".cycle-pager span").removeClass("cycle-pager-active");
 		$(".cycle-pager span").eq(now).addClass("cycle-pager-active");
+		var hei = $slide.eq(now).height();
+		$(".bans").stop().animate({"height":hei+"px"}, speed);
 		$slide.eq(now).css({"z-index":depth++, "opacity":0}).stop().animate({"opacity":1}, speed, function(){
+			//여기는 애니메이션 완료된 직후
+			$slide.children("div").removeClass("aniset").css({
+				"animation-name":"none",
+				"animation-fill-mode":"backwards",
+			});
+			$(this).children("div").each(function(){
+				$(this).addClass("aniset");
+				$(this).css({
+					"animation-name":$(this).data("ani"),
+					"animation-delay":$(this).data("delay"),
+					"animation-duration":$(this).data("speed"),
+					"animation-fill-mode":"forwards"
+				});
+			});
 			if(now == end) now = 0;
 			else now++;
 		});
@@ -218,7 +244,8 @@ function fadeShow() {
 }
 //horzShow();
 function horzShow() {
-	$(".ban").append($(".ban > li").eq(0).clone());
+	//맨 앞의 li를 복사해서 $(".ban")맨 뒤에 붙여라
+	$(".ban").append($(".ban > li").eq(0).clone());	
 	var $wrap = $(".ban");
 	var $slide = $(".ban > li");
 	var now = 1;
@@ -226,9 +253,18 @@ function horzShow() {
 	var timeout = 3000;
 	var end = $slide.length - 1;
 	var interval;
+	var hei = 0;
+	//초기화
+	$(window).resize(function(){
+		hei = 0;
+		$slide.each(function(i){
+			//$(".ban > li")중 가장 큰 height 구함
+			if(hei < $(this).height()) hei = $(this).height();	
+		});
+		$wrap.height(hei);		// $(".ban")의 높이를 넣어준다.
+	}).trigger("resize");
 	$slide.each(function(i){
 		$(this).css({"left":(i*100)+"%", "position":"absolute"});
-		$wrap.height($(this).height());
 		if(i<end) $(".cycle-pager").append("<span>●</span>");
 	});
 	$(".cycle-pager span").click(function(){
@@ -244,6 +280,7 @@ function horzShow() {
 		$(".cycle-pager span").removeClass("cycle-pager-active");
 		$(".cycle-pager span").eq(pnow).addClass("cycle-pager-active");
 		$wrap.stop().animate({"left":(-now*100)+"%"}, speed, function(){
+			$(window).trigger("resize");
 			if(now == end) {
 				$wrap.css({"left":0});
 				now = 1;
@@ -252,7 +289,7 @@ function horzShow() {
 		});
 	}	
 }
-vertShow();
+//vertShow();
 function vertShow() {
 	$(".ban").append($(".ban > li").eq(0).clone());
 	var $wrap = $(".ban");
@@ -262,6 +299,8 @@ function vertShow() {
 	var timeout = 3000;
 	var end = $slide.length - 1;
 	var interval;
+	var hei = 1000;
+	//초기화
 	$slide.each(function(i){
 		if(i<end) $(".cycle-pager").append("<span>●</span>");
 	});
@@ -272,15 +311,18 @@ function vertShow() {
 		interval = setInterval(vertAni, timeout);
 	});
 	interval = setInterval(vertAni, timeout);
+	$(".bans").height($slide.eq(0).height());
 	$(window).resize(function(){
-		$(".bans").height($slide.height());
-	}).trigger("resize");
+		$(".bans").height($slide.eq(now).height());
+	});
 	function vertAni() {
 		if(now == end) pnow = 0;
 		else pnow = now;
 		$(".cycle-pager span").removeClass("cycle-pager-active");
 		$(".cycle-pager span").eq(pnow).addClass("cycle-pager-active");
 		var top = $slide.eq(now).position().top;
+		var hei = $slide.eq(now).height();
+		$(".bans").stop().animate({"height":hei+"px"}, speed);
 		$wrap.stop().animate({"top":-top+"px"}, speed, function(){
 			if(now == end) {
 				$wrap.css({"top":0});
@@ -290,3 +332,45 @@ function vertShow() {
 		});
 	}
 }
+
+/***** hover Animation *****/
+$(".hov_ani").each(function(){
+	$(this).css({"position":"relative"});
+	$(this).append(`
+		<ul class="hov_mask" style="display:none">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	`);
+	$(this).mouseenter(function(){
+		var speed = 250;
+		var $mask = $(this).children(".hov_mask");
+		$mask.fadeIn(speed);
+		$mask.children("li").eq(0).stop().animate({"width":"90%"}, speed);
+		$mask.children("li").eq(1).stop().animate({"width":"90%"}, speed);
+		$mask.children("li").eq(2).stop().animate({"height":"80%"}, speed);
+		$mask.children("li").eq(3).stop().animate({"height":"80%"}, speed);
+	});
+	$(this).mouseleave(function(){
+		var speed = 125;
+		var $mask = $(this).children(".hov_mask");
+		$mask.fadeOut(speed);
+		$mask.children("li").eq(0).stop().animate({"width":"50%"}, speed);
+		$mask.children("li").eq(1).stop().animate({"width":"50%"}, speed);
+		$mask.children("li").eq(2).stop().animate({"height":"50%"}, speed);
+		$mask.children("li").eq(3).stop().animate({"height":"50%"}, speed);
+	});
+});
+
+$(".ghost_bt").mouseenter(function(){
+	$(this).children("div").css({"transition":"transform 0.2s", "transform":"scale(1)"});
+});
+$(".ghost_bt").mouseleave(function(){
+	$(this).children("div").css({"transition":"transform 0.1s", "transform":"scale(0)"});
+});
+$(".ghost_bt").click(function(){
+	$(".ghost_bt").css({"background-color":"", "color":"", "border":""});
+	$(this).css({"background-color":"#333", "color":"#fff", "border":"1px solid #333"});
+});

@@ -16,94 +16,193 @@
 	<script src="../js/imagesloaded.pkgd.min.js"></script>
 	<script src="../js/masonry.pkgd.min.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
-	<script src="../js/jquery.cycle2.min.js"></script>
+	<!--script src="../js/jquery.cycle2.min.js"></script-->
 </head>
 
 <body>
 	<!-- 상단 네비 / top_navs -->
 	<div class="top_navs wrap clear">
-			<div class="logo"><img src="../img/logo.png"></div>
-			<ul class="top_nav">
-				<li class="top_icon">
-					<img src="../img/icon-1.png" class="fl">
-					<span class="fl">FREE DELIVERY<br>
-						FROM $ 250</span>
-				</li>
-				<li class="top_icon">
-					<img src="../img/icon-2.png" class="fl">
-					<span class="fl">MONEY BACK<br>
-						GUARANTEED</span>
+		<div class="logo"><img src="../img/logo.png"></div>
+		<ul class="top_nav">
+			<li class="top_icon">
+				<img src="../img/icon-1.png" class="fl">
+				<span class="fl">FREE DELIVERY<br>
+					FROM $ 250</span>
+			</li>
+			<li class="top_icon">
+				<img src="../img/icon-2.png" class="fl">
+				<span class="fl">MONEY BACK<br>
+					GUARANTEED</span>
+			</li>
+			<li>
+				<span class="w3-badge w3-light-grey">0</span>
+				<span class="fa fa-shopping-bag"></span> CART
+			</li>
+			<li>
+				<span class="fa fa-bars"></span>
+			</li>
+		</ul>
+	</div>
+	<!-- 메인 네비 / navs -->
+	<div class="navs">
+		<ul class="wrap clear">
+			<li class="nav rel">HOME<ul class="nav_sub clear"></ul>
+			</li>
+			<li class="nav">SHOP<ul class="nav_sub clear"></ul>
+			</li>
+			<li class="nav">BLOG
+				<ul class="nav_sub blogs clear">
+					<li class="grid"></li>
+					<li>
+						<img src="../img/menu-blog.jpg" class="img">
+					</li>
+				</ul>
+			</li>
+			<li class="nav rel">PORTFOLIO<ul class="nav_sub clear"></ul>
+			</li>
+			<li class="nav">CONTACT</li>
+			<li class="search">
+				<input type="text" name="search" class="in_search" placeholder="search">
+				<span class="fa fa-search"></span>
+			</li>
+		</ul>
+	</div>
+	<!-- 메인 배너 및 좌측 네비 / mains -->
+	<ul class="mains wrap clear">
+		<li class="lefts">
+			<ul class="left"></ul>
+		</li>
+		<li class="bans">
+			<ul class="ban">
+				<li>
+					<img src="../img/slider-7.jpg" class="img">
+					<div class="aniset" data-ani="leftShow" data-speed="1s" data-delay="0s">Shopping!!</div>
+					<div class="aniset" data-ani="leftShow" data-speed="1s" data-delay="0.5s">쇼핑의 즐거움</div>
 				</li>
 				<li>
-					<span class="w3-badge w3-light-grey">0</span>
-					<span class="fa fa-shopping-bag"></span> CART
+					<img src="../img/slider-8.jpg" class="img">
+					<div class="aniset" data-ani="leftShow" data-speed="1s" data-delay="0s">Goods</div>
 				</li>
 				<li>
-					<span class="fa fa-bars"></span>
+					<img src="../img/slider-12.jpg" class="img">
+					<div class="aniset" data-ani="leftShow" data-speed="1s" data-delay="0s">Street Style</div>
 				</li>
 			</ul>
+			<div class="cycle-pager"></div>
+			<!--ul class="ban cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-timeout="3000" data-cycle-slides="> li" data-pause-on-hover="true" data-cycle-speed="500">
+				<div class="cycle-pager"></div>
+				<li><img src="../img/slider-7.jpg" class="img"></li>
+				<li><img src="../img/slider-8.jpg" class="img"></li>
+				<li><img src="../img/slider-12.jpg" class="img"></li>
+			</ul-->
+		</li>
+	</ul>
+	<!-- 대표상품 / .favs -->
+	<ul class="favs wrap clear">
+		<li class="fav hov_ani">
+			<img src="../img/banner-13.jpg" class="img">
+		</li>
+		<li class="fav hov_ani">
+			<img src="../img/banner-15.jpg" class="img">
+		</li>
+	</ul>
+	<!-- woman 상품 / .womans -->
+	<div class="womans wrap">
+		<div class="woman_tits clear">
+			<div class="woman_tit">
+				<h2>WOMAN</h2>
+				<span>PAND-PICKED ARRIVALS FROM THE BEST DESIGNER</span>
+			</div>
+			<div class="woman_bts">
+				<div class="ghost_bt fl">
+					<div></div>
+					<span>LATEST</span>
+				</div>
+				<div class="ghost_bt fl">
+					<div></div>
+					<span>TOP RATING</span>
+				</div>
+				<div class="ghost_bt fl">
+					<div></div>
+					<span>BEST SELLERS</span>
+				</div>
+			</div>
 		</div>
-		<!-- 메인 네비 / navs -->
-		<div class="navs">
-			<ul class="wrap clear">
-				<li class="nav rel">HOME<ul class="nav_sub clear"></ul>
+		<div class="woman_conts">
+			<ul class="woman_latest clear">
+				<li class="prds">
+				  <ul class="prd">
+					  <li>
+							<img src="../img/product-11-300x400.jpg" class="img prd_img">
+							<div class="icon_hot">HOT</div>
+							<div class="icon_sale">SALE</div>
+							<div class="prd_mask"></div>
+							<div class="icon_cart prd_icon"><i class="fa fa-shopping-cart"></i></div>
+							<div class="icon_like prd_icon"><i class="fa fa-heart-o"></i></div>
+							<div class="icon_search prd_icon"><i class="fa fa-search"></i></div>
+					  </li>
+					  <li>Designer Glasses Frames</li>
+					  <li>
+						  <i class="fa fa-star"></i>
+						  <i class="fa fa-star"></i>
+						  <i class="fa fa-star"></i>
+						  <i class="fa fa-star"></i>
+						  <i class="fa fa-star-0"></i>
+					  </li>
+					  <li>
+						  <span>$24.00 - $30.00</span>
+					  </li>
+				  </ul>
+				  
 				</li>
-				<li class="nav">SHOP<ul class="nav_sub clear"></ul>
-				</li>
-				<li class="nav">BLOG
-					<ul class="nav_sub blogs clear">
-						<li class="grid"></li>
+				<li class="prds">
+				   <ul class="prd">
 						<li>
-							<img src="../img/menu-blog.jpg" class="img">
+							<img src="../img/product-11-300x400.jpg" class="img prd_img">
+							<div class="icon_hot">HOT</div>
+							<div class="icon_sale">SALE</div>
+							<div class="prd_mask"></div>
+							<div class="icon_cart prd_icon"><i class="fa fa-shopping-cart"></i></div>
+							<div class="icon_like prd_icon"><i class="fa fa-heart-o"></i></div>
+							<div class="icon_search prd_icon"><i class="fa fa-search"></i></div>
+					 	</li>
+						<li>Designer Glasses Frames</li>
+						<li>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star-0"></i>
+						</li>
+						<li>
+							<span>$24.00 - $30.00</span>
 						</li>
 					</ul>
 				</li>
-				<li class="nav rel">PORTFOLIO<ul class="nav_sub clear"></ul></li>
-				<li class="nav">CONTACT</li>
-				<li class="search">
-					<input type="text" name="search" class="in_search" placeholder="search">
-					<span class="fa fa-search"></span>
-				</li>
+				<li></li>
+				<li></li>
 			</ul>
 		</div>
-		<!-- 메인 배너 및 좌측 네비 / mains -->
-		<ul class="mains wrap clear">
-			<li class="lefts"><ul class="left"></ul></li>
-			<li class="bans">
-				<ul class="ban">
-					<li><img src="../img/slider-7.jpg" class="img"></li>
-					<li><img src="../img/slider-8.jpg" class="img"></li>
-					<li><img src="../img/slider-12.jpg" class="img"></li>
-				</ul>
-				<div class="cycle-pager"></div>
-				<!--ul class="ban cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-timeout="3000" data-cycle-slides="> li" data-pause-on-hover="true" data-cycle-speed="500">
-					<div class="cycle-pager"></div>
-					<li><img src="../img/slider-7.jpg" class="img"></li>
-					<li><img src="../img/slider-8.jpg" class="img"></li>
-					<li><img src="../img/slider-12.jpg" class="img"></li>
-				</ul-->
-			</li>
+	</div>
+
+	<!-- 오른쪽 날개 / rt_wings -->
+	<div class="modals rt_bg"></div>
+	<div class="modals rt_cont">
+		<span class="fa fa-close"></span>
+		<ul class="mypages">
+			<li>MY ACCOUNT</li>
+			<li>CHECKOUT</li>
+			<li>WISHLIST</li>
 		</ul>
-	
-	
-		<!-- 오른쪽 날개 / rt_wings -->
-		<div class="modals rt_bg"></div>
-		<div class="modals rt_cont">
-			<span class="fa fa-close"></span>
-			<ul class="mypages">
-				<li>MY ACCOUNT</li>
-				<li>CHECKOUT</li>
-				<li>WISHLIST</li>
-			</ul>
-			<div class="country">
-				<span class="w3-badge w3-light-grey">USD</span>
-				<span class="w3-badge w3-light-grey">EUR</span>
-				<span class="w3-badge w3-light-grey">GBP</span>
-				<br>
-				<span class="w3-badge w3-light-grey"><img src="../img/eng.png"></span>
-				<span class="w3-badge w3-light-grey"><img src="../img/fra.jpg"></span>
-				<span class="w3-badge w3-light-grey"><img src="../img/arab.jpg"></span>
-			</div>
+		<div class="country">
+			<span class="w3-badge w3-light-grey">USD</span>
+			<span class="w3-badge w3-light-grey">EUR</span>
+			<span class="w3-badge w3-light-grey">GBP</span>
+			<br>
+			<span class="w3-badge w3-light-grey"><img src="../img/eng.png"></span>
+			<span class="w3-badge w3-light-grey"><img src="../img/fra.jpg"></span>
+			<span class="w3-badge w3-light-grey"><img src="../img/arab.jpg"></span>
+		</div>
 	</div>
 	<script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
 	<script src="../js/main.js"></script>
