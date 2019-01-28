@@ -23,3 +23,9 @@ div, ul, li, p, h1, h2, h3, h4, h5 {margin: 0; padding: 0; box-sizing: border-bo
 .ovhide {overflow:hidden;}
 .w3-input, .w3-select {padding:3px;}
 button {margin-top:-3px;}
+
+.opa_in {opacity:.7}
+.opa_in:hover {opacity:1}
+
+.opa_de {opacity:1}
+.opa_de:hover {opacity:.7}

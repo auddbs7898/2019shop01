@@ -19,7 +19,7 @@ w3.includeHTML(function(){
 });
 
 // database = CRUD(Create/Read/Update/Delete)
-// Firebase Init /
+// Firebase Init / 
 const log = console.log;
 var config = {
     apiKey: "AIzaSyDmCGWlnyhcIla3h0boO0qG6PxwgfesYyE",
