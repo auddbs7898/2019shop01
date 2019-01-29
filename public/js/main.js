@@ -72,15 +72,16 @@ function homeAdd(data) {
 }
 //카테고리 BLOG 생성
 function blogAdd(data) {
+	console.log(data.val().name);
 	var html = '';
-	html += '<ul id="'+data.key+' class="grid-item">';
+	html += '<ul id="'+data.key+'" class="grid-item">';
 	html += '<li class="grid-tit">'+data.val().name+'</li>';
 	html += '</ul>';
 	$(".grid").append(html);
 	db.ref("root/blog/"+data.key+"/sub").once("value", function(sub){
 		sub.forEach(function(v, i){
-			html  = '<li class="rt_arrow" id="'+v.key+'>';
-			html += '<a href="'+v.val().link+' target="'+v.val().target+'>'+v.val().name+'</a>';
+			html  = '<li class="rt_arrow" id="'+v.key+'">';
+			html += '<a href="'+v.val().link+'" target="'+v.val().target+'">'+v.val().name+'</a>';
 			html += '</li>';
 			$("#"+data.key).append(html);
 		});
@@ -105,7 +106,7 @@ function shopAjax(data) {
 	html += '</div>';
 	html += '<ul class="shop_prds">';
 	for(i=0; i<data.prds.length; i++) {
-		html += '<li class="shop_prd ovhide"><a href="'+data.prds[i].link+' target="'+data.prds[i].target+'><img src="'+data.prds[i].src+' class="img size_ani"></a></li>';
+		html += '<li class="shop_prd ovhide"><a href="'+data.prds[i].link+'" target="'+data.prds[i].target+'"><img src="'+data.prds[i].src+'" class="img size_ani"></a></li>';
 	}
 	html += '</ul>';
 	$(".nav_sub").eq(1).append(html);
